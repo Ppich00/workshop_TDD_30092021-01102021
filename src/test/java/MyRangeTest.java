@@ -32,4 +32,13 @@ public class MyRangeTest {
         boolean result = myRange.endWithInclude();
         assertTrue(result);
     }
+
+    @Test
+    @DisplayName("input ตัวทีสุดท้ายต้องเป็น ] input = [1,5) result = false")
+    public void case04() {
+        String input = "[1,5)";
+        MyRange myRange = new MyRange(input);
+        boolean result = myRange.endWithInclude();
+        assertFalse(result);
+    }
 }

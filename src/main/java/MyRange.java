@@ -12,4 +12,10 @@ public class MyRange {
     public boolean endWithInclude() {
         return  this.input.endsWith("]");
     }
+
+    public void validate() throws InputInvalidException {
+        if(!this.input.startsWith("(")|| !this.input.startsWith("[")){
+            throw new InputInvalidException("Input error");
+        }
+    }
 }

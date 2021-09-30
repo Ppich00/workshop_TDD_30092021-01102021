@@ -13,7 +13,7 @@ public class MyRangeFailureTest {
             range.validate();
             fail("ไม่ผิด");
         } catch (InputInvalidException e) {
-            if(!"Input error".equals(e.getMessage())) {
+            if(!"Not Start With ( or [".equals(e.getMessage())) {
                 fail("Error message ผิด " + e.getMessage());
             }
         }
@@ -26,7 +26,7 @@ public class MyRangeFailureTest {
         Exception e = assertThrows(InputInvalidException.class, () -> {
             range.validate();
         });
-        assertEquals("Input error", e.getMessage() );
+        assertEquals("Not Start With ( or [", e.getMessage() );
     }
 
     @Test
@@ -36,6 +36,7 @@ public class MyRangeFailureTest {
         Exception e = assertThrows(InputInvalidException.class, () -> {
             range.validate();
         });
-        assertEquals("Input error", e.getMessage() );
+        assertEquals("Not End With ) or ]", e.getMessage() );
     }
+
 }

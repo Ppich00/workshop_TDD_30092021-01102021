@@ -10,16 +10,17 @@ public class MyRange {
     }
 
     public boolean endWithInclude() {
-        return  this.input.endsWith("]");
+        return this.input.endsWith("]");
     }
 
     public void validate() throws InputInvalidException {
-        if(!"(".startsWith(this.input)|| !"[".startsWith(this.input)){
-            throw new InputInvalidException("Input error");
+        if (!this.input.startsWith("(") && !this.input.startsWith("[")) {
+            throw new InputInvalidException("Not Start With ( or [");
         }
-        if(!"(".endsWith(this.input)|| !"]".endsWith(this.input)){
-            throw new InputInvalidException("Input error");
+        if (!(this.input.endsWith(")") && this.input.endsWith("]"))) {
+            throw new InputInvalidException("Not End With ) or ]");
         }
+
 
     }
 }

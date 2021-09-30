@@ -17,5 +17,9 @@ public class MyRange {
         if(!this.input.startsWith("(")|| !this.input.startsWith("[")){
             throw new InputInvalidException("Input error");
         }
+        if(!this.input.endsWith("(")|| !this.input.endsWith("]")){
+            throw new InputInvalidException("Input error");
+        }
+
     }
 }

@@ -28,4 +28,14 @@ public class MyRangeFailureTest {
         });
         assertEquals("Input error", e.getMessage() );
     }
+
+    @Test
+    @DisplayName("ลงท้ายด้วย ) เท่านั้น input = (1,5 ")
+    public void case03() {
+        MyRange range = new MyRange("(1,5");
+        Exception e = assertThrows(InputInvalidException.class, () -> {
+            range.validate();
+        });
+        assertEquals("Input error", e.getMessage() );
+    }
 }

@@ -8,4 +8,8 @@ public class MyRange {
     public boolean starWithInclude() {
         return this.input.startsWith("[");
     }
+
+    public boolean endWithInclude() {
+        return  this.input.endsWith("]");
+    }
 }

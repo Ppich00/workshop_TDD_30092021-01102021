@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MyRangeTest {
 
     @Test
-    @DisplayName("input ตัวแรก เป็น [ input = [1,5] result = true")
+    @DisplayName("input ตัวแรก เป็น [ input = [1,5] , result = true")
     public void case01() {
         String input = "[1,5]";
         MyRange myRange = new MyRange(input);
@@ -16,7 +16,7 @@ public class MyRangeTest {
     }
 
     @Test
-    @DisplayName("input ตัวแรก เป็น [ input = (1,5] result = false")
+    @DisplayName("input ตัวแรก เป็น [ input = (1,5] , result = false")
     public void case02() {
         String input = "(1,5]";
         MyRange myRange = new MyRange(input);
@@ -24,4 +24,12 @@ public class MyRangeTest {
         assertFalse(result);
     }
 
+    @Test
+    @DisplayName("input ตัวทีสุดท้ายต้องเป็น ] input = [1,5] , result = true")
+    public void case03() {
+        String input = "[1,5]";
+        MyRange myRange = new MyRange(input);
+        boolean result = myRange.endWithInclude();
+        assertTrue(result);
+    }
 }

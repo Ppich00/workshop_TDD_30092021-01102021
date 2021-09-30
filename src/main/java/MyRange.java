@@ -14,10 +14,10 @@ public class MyRange {
     }
 
     public void validate() throws InputInvalidException {
-        if(!this.input.startsWith("(")|| !this.input.startsWith("[")){
+        if(!"(".startsWith(this.input)|| !"[".startsWith(this.input)){
             throw new InputInvalidException("Input error");
         }
-        if(!this.input.endsWith("(")|| !this.input.endsWith("]")){
+        if(!"(".endsWith(this.input)|| !"]".endsWith(this.input)){
             throw new InputInvalidException("Input error");
         }
 

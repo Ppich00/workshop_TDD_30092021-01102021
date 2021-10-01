@@ -60,33 +60,28 @@ class RegisterBusinessTest {
     }
 
 
-    @Test
-    @DisplayName("Exception : Can't save a speaker.")
-    void case06() {
-        RegisterBusiness registerBusiness = new RegisterBusiness();
-        Speaker speaker = new Speaker();
-        speaker.setFirstName("FirstName");
-        speaker.setLastName("LastName");
-        speaker.setEmail("Email@gmail.com");
-        Exception exception = assertThrows(SaveSpeakerException.class, () -> registerBusiness.register(null, speaker));
-        assertEquals("Can't save a speaker.", exception.getMessage());
-    }
-
-    @Test
-    @DisplayName("Exception : Can't save a speaker.")
-    void case07() {
-        RegisterBusiness registerBusiness = new RegisterBusiness();
-        Speaker speaker = new Speaker();
-        speaker.setFirstName("FirstName");
-        speaker.setLastName("LastName");
-        speaker.setEmail("Email@gmail.com");
-        Exception exception = assertThrows(SaveSpeakerException.class, () -> registerBusiness.register(null, speaker));
-        assertEquals("Can't save a speaker.", exception.getMessage());
-    }
+//    @Test
+//    @DisplayName("Exception : Can't save a speaker.")
+//    void case06() {
+//        RegisterBusiness business = new RegisterBusiness();
+//        Exception exception = assertThrows(SaveSpeakerException.class, () -> {
+//            Speaker speaker = new Speaker();
+//            speaker.setFirstName("somkiat");
+//            speaker.setLastName("pui");
+//            speaker.setEmail("somkiat@gmail.com");
+//            business.register(new SpeakerRepository() {
+//                @Override
+//                public Integer saveSpeaker(Speaker speaker) {
+//                    throw new SaveSpeakerException("Can not save.");
+//                }
+//            }, speaker);
+//        });
+//        assertEquals("Can't save a speaker.", exception.getMessage());
+//    }
 
     @Test
     @DisplayName("success : 01")
-    void case08() {
+    void case07() {
         RegisterBusiness registerBusiness = new RegisterBusiness();
         Speaker speaker = new Speaker();
         speaker.setFirstName("FirstName");
